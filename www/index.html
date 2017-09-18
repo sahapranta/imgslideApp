@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>socket app</title>
+	<style>
+		body {
+			margin:0;
+		}
+		.Slide {
+			width:650px;
+			height:780px;
+			margin:50px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="Slide">
+		<img id="mySlide" width="450px" src="" alt="">
+	</div>
+		
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var img = document.getElementById("mySlide");
+		var socket = io();
+		socket.on('showSlide', function(slide){
+			img.src = '/images/' + slide + '.jpg';
+		});
+	</script>
+</body>
+</html>
