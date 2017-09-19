@@ -14,6 +14,6 @@ setInterval(function() {
     io.emit('showSlide', slide);
 }, 2000)
 
-http.listen(3000, function(){
+http.listen(process.env.PORT || 8888, function(){
     console.log('server is running');
 });
